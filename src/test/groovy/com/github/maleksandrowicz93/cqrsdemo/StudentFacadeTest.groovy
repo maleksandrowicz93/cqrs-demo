@@ -2,7 +2,7 @@ package com.github.maleksandrowicz93.cqrsdemo
 
 import spock.lang.Specification
 
-class UserFacadeTest extends Specification {
+class StudentFacadeTest extends Specification {
 
     def "get all students"() {
         given: "2 students exist in db"

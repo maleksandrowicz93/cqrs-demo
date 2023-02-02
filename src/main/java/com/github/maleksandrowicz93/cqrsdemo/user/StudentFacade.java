@@ -8,7 +8,7 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-public class UserFacade {
+public class StudentFacade {
 
     public List<StudentDto> getAllStudents() {
         return new ArrayList<>();
