@@ -4,36 +4,39 @@ import com.github.maleksandrowicz93.cqrsdemo.user.dto.AddStudentCommand;
 import com.github.maleksandrowicz93.cqrsdemo.user.dto.EditStudentDataCommand;
 import com.github.maleksandrowicz93.cqrsdemo.user.dto.StudentDto;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.List;
 
-@Component
 @RequiredArgsConstructor
 public class StudentFacade {
 
+    private final StudentQueryHandler studentQueryHandler;
+    private final AddStudentCommandHandler addStudentCommandHandler;
+    private final EditStudentDataCommandHandler editstudentDataCommandHandler;
+    private final UpdatePasswordCommandHandler updatePasswordCommandHandler;
+    private final DeleteStudentCommandHandler deleteStudentCommandHandler;
+
     public List<StudentDto> getAllStudents() {
-        return new ArrayList<>();
+        return studentQueryHandler.findAllStudents();
     }
 
     public StudentDto addStudent(AddStudentCommand command) {
-        return StudentDto.builder().build();
+        return addStudentCommandHandler.handle(command);
     }
 
     public StudentDto getStudent(int studentId) {
-        return StudentDto.builder().build();
+        return studentQueryHandler.findStudentById(studentId);
     }
 
     public StudentDto editStudentData(int studentId, EditStudentDataCommand command) {
-        return StudentDto.builder().build();
+        return editstudentDataCommandHandler.handle(studentId, command);
     }
 
     public boolean updatePassword(int studentId, String password) {
-        return false;
+        return updatePasswordCommandHandler.handle(studentId, password);
     }
 
     public boolean deleteStudent(int studentId) {
-        return false;
+        return deleteStudentCommandHandler.handle(studentId);
     }
 }
