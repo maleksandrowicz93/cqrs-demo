@@ -73,4 +73,26 @@ class StudentUtils {
                 .birthDate(ALTERNATIVE_BIRTH_DAY)
                 .build()
     }
+
+    static def studentToAdd() {
+        Student.builder()
+                .id(ID)
+                .email(EMAIL)
+                .firstName(FIRST_NAME)
+                .lastName(LAST_NAME)
+                .birthDate(BIRTH_DATE)
+                .password(PASSWORD)
+                .build()
+    }
+
+    static def alternativeStudentToAdd() {
+        Student.builder()
+                .id(ALTERNATIVE_ID)
+                .email(ALTERNATIVE_EMAIL)
+                .firstName(ALTERNATIVE_FIRST_NAME)
+                .lastName(ALTERNATIVE_LAST_NAME)
+                .birthDate(ALTERNATIVE_BIRTH_DAY)
+                .password(ALTERNATIVE_PASSWORD)
+                .build()
+    }
 }
