@@ -9,15 +9,6 @@ class AddStudentCommandHandler {
 
     private final StudentRepository studentRepository;
 
-//    public AddStudentCommandHandler(StudentRepository studentRepository) {
-//        this.studentRepository = studentRepository;
-//        studentRepository.save(Student.builder()
-//                .email("email")
-//                .password("123")
-//                .build());
-//        System.out.println();
-//    }
-
     StudentDto handle(AddStudentCommand command) {
         return StudentDto.builder().build();
     }
